@@ -1,0 +1,22 @@
+{
+  "dataplus": 0,
+  "dualpane": 1,
+  "externalquiz": 2,
+  "folder": 3,
+  "forumng": 4,
+  "glossary": 5,
+  "homepage": 6,
+  "htmlactivity": 7,
+  "oucollaborate": 8,
+  "oucontent": 9,
+  "ouelluminate": 10,
+  "ouwiki": 11,
+  "page": 12,
+  "questionnaire": 13,
+  "quiz": 14,
+  "repeatactivity": 15,
+  "resource": 16,
+  "sharedsubpage": 17,
+  "subpage": 18,
+  "url": 19
+}

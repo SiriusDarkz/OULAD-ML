@@ -1,0 +1,31 @@
+[project]
+name = "OULAD-ML"
+version = "0.1.0"
+description = "Análisis Exploratorio de Datos del dataset OULAD"
+
+authors = [
+    { name = "Jose Eugenio Duran", email = "eugenioduran15@gmail.com" }
+]
+
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "sqlalchemy>=2.0",
+    "psycopg2-binary>=2.9",
+    "matplotlib>=3.8",
+    "seaborn>=0.12",
+    "notebook>=7.0",
+    "rich>=13.7",
+    "scikit-learn (>=1.7.0,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "oulad", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
