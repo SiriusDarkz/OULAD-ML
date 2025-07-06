@@ -27,8 +27,7 @@ def drop_all_tables(engine):
         "DROP TABLE IF EXISTS student_infos CASCADE;",
         "DROP TABLE IF EXISTS courses CASCADE;",
 
-        "DROP VIEW IF EXISTS fd_student_vle;",
-        "DROP MATERIALIZED VIEW IF EXISTS fd_student_assessments;"
+        "DROP TABLE IF EXISTS analytical_base_table;"
     ]
     console.rule("[bold red]🗑️ Eliminando Tablas y Vistas")
 

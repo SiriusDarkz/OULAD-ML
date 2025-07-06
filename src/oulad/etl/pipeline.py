@@ -12,8 +12,10 @@ class OULADPipeline:
             "1": "oulad.etl.create_tables",
             "2": "oulad.etl.load_raw_tables",
             "3": "oulad.etl.transform",
-            "4": "oulad.etl.create_views",
-            "5": "oulad.etl.drop_all_tables"
+            "4": "oulad.etl.create_full_domain",
+            "5": "oulad.etl.model",
+            "6": "oulad.etl.drop_all_tables"
+
         }
 
     def ejecutar(self, script_path):
@@ -32,8 +34,9 @@ class OULADPipeline:
         tabla.add_row("1", "Crear tablas RAW y Clean")
         tabla.add_row("2", "Cargar datos RAW")
         tabla.add_row("3", "Transformar datos (imputar, codificar, features y carga)")
-        tabla.add_row("4", "Crear Views (Full Domain.)")
-        tabla.add_row("5", "Borrar todas las tablas (RAW y CLEAN) y Views")
+        tabla.add_row("4", "Crear Full Domain.")
+        tabla.add_row("5", "Ejecutar Modelo ML.")
+        tabla.add_row("6", "Borrar todas las tablas (RAW y CLEAN) y Full Domain")
         tabla.add_row("0", "Salir")
 
         console.print(tabla)

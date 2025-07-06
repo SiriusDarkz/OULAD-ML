@@ -28,11 +28,10 @@ def main():
     # Rutas de los scripts
     base_path = "sql/full_domain"
     scripts = [
-        "fd_student_vles.sql",           # vista normal
-        "fd_student_assessments.sql"    # vista materializada
+        "analytical_base_table.sql"        
     ]
 
-    console.print(Panel("[bold cyan]Creación de Vistas Full Domain[/bold cyan]", expand=False))
+    console.print(Panel("[bold cyan]Creación de Tabla Full Domain[/bold cyan]", expand=False))
 
     try:
         with psycopg2.connect(**conn_info) as conn:
@@ -45,7 +44,7 @@ def main():
                     progress.advance(task)
                     console.print(f"[bold green]✔[/bold green] Ejecutado: [yellow]{script}[/yellow]")
 
-        console.print(Panel("[bold green]Vistas creadas exitosamente.[/bold green]", expand=False))
+        console.print(Panel("[bold green]Tabla creada exitosamente.[/bold green]", expand=False))
 
     except Exception as e:
         console.print(Panel(f"[bold red]Error:[/bold red] {str(e)}", expand=False))

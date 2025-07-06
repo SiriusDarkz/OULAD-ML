@@ -20,7 +20,8 @@ dependencies = [
     "seaborn>=0.12",
     "notebook>=7.0",
     "rich>=13.7",
-    "scikit-learn (>=1.7.0,<2.0.0)"
+    "scikit-learn (>=1.7.0,<2.0.0)",
+    "lightgbm>=4.3.0"
 ]
 
 [tool.poetry]
