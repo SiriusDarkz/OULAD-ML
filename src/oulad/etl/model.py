@@ -7,6 +7,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sqlalchemy import create_engine
 import lightgbm as lgb # Importamos LightGBM
+import joblib
 
 # Módulos de Scikit-learn para el modelado y la evaluación
 from sklearn.model_selection import train_test_split
@@ -205,6 +206,7 @@ if __name__ == "__main__":
         # Limpieza final de datos antes de entrenar
         df_abt.replace([np.inf, -np.inf], np.nan, inplace=True)
         df_abt.fillna(0, inplace=True)
+        print(df_abt.columns)
         print(df_abt['final_result'].value_counts(dropna=False))
         
         # 3. DEFINIR Y EJECUTAR LOS MODELOS
@@ -240,6 +242,7 @@ if __name__ == "__main__":
             all_metrics_summary.append(summary)
             
             model_wrapper.plot_feature_importance(X_train.columns)
+            joblib.dump(model_wrapper, f"modelo_experto_OULAD{model_name}.pkl")
 
         # 4. CREAR Y GUARDAR EL REPORTE GENERAL DE MODELOS
         summary_df = pd.DataFrame(all_metrics_summary)
@@ -249,3 +252,4 @@ if __name__ == "__main__":
         print(f"Guardado el reporte general de métricas en: {summary_filename}")
         print(summary_df)
         print("¡Proceso de modelado y exportación completado!")
+        

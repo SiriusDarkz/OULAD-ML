@@ -14,7 +14,9 @@ class OULADPipeline:
             "3": "oulad.etl.transform",
             "4": "oulad.etl.create_full_domain",
             "5": "oulad.etl.model",
-            "6": "oulad.etl.drop_all_tables"
+            "6":"oulad.etl.generate_syntetic_data",
+            "7": "oulad.etl.model_validate_by_external_dataset",
+            "8":"oulad.etl.drop_all_tables"
 
         }
 
@@ -36,7 +38,9 @@ class OULADPipeline:
         tabla.add_row("3", "Transformar datos (imputar, codificar, features y carga)")
         tabla.add_row("4", "Crear Full Domain.")
         tabla.add_row("5", "Ejecutar Modelo ML.")
-        tabla.add_row("6", "Borrar todas las tablas (RAW y CLEAN) y Full Domain")
+        tabla.add_row("6", "Generar Data Sintetica.")
+        tabla.add_row("7", "Verificar Modelo con Dataset externo")
+        tabla.add_row("7", "Borrar todas las tablas (RAW y CLEAN) y Full Domain")
         tabla.add_row("0", "Salir")
 
         console.print(tabla)
@@ -44,7 +48,7 @@ class OULADPipeline:
     def menu(self):
         while True:
             self.mostrar_menu()
-            opcion = Prompt.ask("\n[bold yellow]Seleccione una opción[/bold yellow]", choices=["0", "1", "2", "3", "4", "5"])
+            opcion = Prompt.ask("\n[bold yellow]Seleccione una opción[/bold yellow]", choices=["0", "1", "2", "3", "4", "5","6","7","8"])
             if opcion == "0":
                 console.print("[green]👋 Saliendo del pipeline.[/green]")
                 break
