@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Análisis Exploratorio de Datos del dataset OULAD"
 
 authors = [
-    { name = "Jose Eugenio Duran", email = "eugenioduran15@gmail.com" }
+    { name = "Jose Eugenio Duran", email = "eugenioduran15@gmail.com" },
     { name = "Emmanuel Rodriguez Carr", emaill = "emmanuelrc661@gmail.com"}
 ]
 
